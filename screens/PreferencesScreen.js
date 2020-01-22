@@ -6,7 +6,7 @@ const PreferencesScreen = props => {
   const prefs = [{
     value: 'Donate to a cause'
   }, {
-    value: 'Recieve a donation'
+    value: 'Receive a donation'
   }, {
     value: 'Join an impact organization'
   }, {

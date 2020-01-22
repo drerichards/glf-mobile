@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { StyleSheet, View, FlatList } from 'react-native'
 import { Card, CardItem, Text, Button } from 'native-base'
 
-const RecommendedTab = () => {
+const RecommendedTab = ({ navigateActivity }) => {
   const newArr = []
   const activity = {
     organization: 'NAF',
@@ -35,14 +35,23 @@ const RecommendedTab = () => {
           numColumns={2}
           renderItem={activityData =>
             <Card style={styles.cardContainer}>
-              <CardItem style={styles.cardHeaderContainer}>
+              <CardItem
+                button
+                onPress={() => navigateActivity('Activity')}
+                style={styles.cardHeaderContainer}>
                 <Text style={styles.organization}>{activityData.item.organization}</Text>
                 <Text style={styles.value}>{activityData.item.value}</Text>
               </CardItem>
-              <CardItem cardBody style={styles.cardImageContainer}>
+              <CardItem
+                cardBody
+                button
+                onPress={() => navigateActivity('Activity')} style={styles.cardImageContainer}>
                 <View></View>
               </CardItem>
-              <CardItem style={styles.cardFooterContainer}>
+              <CardItem
+                button
+                onPress={() => navigateActivity('Activity')}
+                style={styles.cardFooterContainer}>
                 <Text style={styles.date}>{activityData.item.date}</Text>
                 <Text style={styles.info}>{activityData.item.info}</Text>
                 <View style={styles.listLabelContainer}>

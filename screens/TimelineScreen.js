@@ -4,16 +4,15 @@ import { Container, Tabs, Tab } from 'native-base'
 import SearchBar from '../components/SearchBar'
 import RecommendedTab from '../components/tabPages/RecommendedTab'
 import TabPage from '../components/tabPages/TabPage'
-import T from '../components/FooterNavigation'
 import FooterNavigation from '../components/FooterNavigation'
 
-const TimelineScreen = () => {
+const TimelineScreen = props => {
   return (
     <Container>
       <SearchBar />
       <Tabs>
         <Tab heading="Recommended">
-          <RecommendedTab />
+          <RecommendedTab navigateActivity={props.navigation.navigate} />
         </Tab>
         <Tab heading="Trending">
           <TabPage title={'Trending'} />

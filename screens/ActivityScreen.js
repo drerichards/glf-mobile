@@ -9,9 +9,12 @@ const ActivityScreen = props => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}></View>
-      <View style={styles.logoContainer}>
-        <Button transparent style={styles.logoButton}></Button>
-      </View>
+      <Button
+        transparent
+        style={styles.logoButton}
+        onPress={() =>
+          props.navigation.navigate('PartnerProfile')}
+      ></Button>
       <View style={styles.bodyContainer}>
         <Text style={styles.bodyTitle}>Sample {data.value}</Text>
         <Text style={styles.bodyText}>{lorem}</Text>
@@ -31,6 +34,10 @@ const ActivityScreen = props => {
       </View>
     </View>
   )
+}
+
+ActivityScreen.navigationOptions = {
+  headerTitle: ''
 }
 
 const styles = StyleSheet.create({
@@ -65,6 +72,9 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   logoContainer: {
+
+  },
+  logoButton: {
     position: 'absolute',
     zIndex: 3,
     height: 124,
@@ -75,9 +85,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     top: '15%',
     right: '5%'
-  },
-  logoButton: {
-
   },
   bodyContainer: {
     textAlign: 'left',

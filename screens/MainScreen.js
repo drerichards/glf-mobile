@@ -10,11 +10,15 @@ const MainScreen = props => {
   let content = <TimelineScreen
     navigateActivity={props.navigation.navigate} />
 
+  const getFooterTab = tabName => {
+    console.log(11, tabName)
+  }
+
   return (
     <View style={styles.container}>
       <SearchBar />
       {content}
-      <FooterNavigation />
+      <FooterNavigation getFooterTab={getFooterTab} />
     </View>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Footer, FooterTab, Button, Icon } from 'native-base'
 
-const FooterNavigation = () => {
+const FooterNavigation = ({getFooterTab}) => {
   const [currentActiveTab, setCurrentActiveTab] = useState('home')
   const [activeHomeTab, setActiveHomeTab] = useState(true)
   const [activeStatsTab, setActiveStatsTab] = useState(false)
@@ -15,31 +15,36 @@ const FooterNavigation = () => {
     if (tabName === currentActiveTab) {
       return
     }
-    console.log(currentActiveTab)
+
     switch (tabName) {
       case 'home':
         setActiveHomeTab(true)
-        deactivateTab()
+        tabFunctions(tabName)
         break
       case 'stats':
         setActiveStatsTab(true)
-        deactivateTab()
+        tabFunctions(tabName)
         break
       case 'messages':
         setActiveMessagesTab(true)
-        deactivateTab()
+        tabFunctions(tabName)
         break
       case 'users':
         setActiveUsersTab(true)
-        deactivateTab()
+        tabFunctions(tabName)
         break
       case 'menu':
         setActiveMenuTab(true)
-        deactivateTab()
+        tabFunctions(tabName)
         break
       default:
         break
     }
+  }
+
+  const tabFunctions = tabName => {
+    getFooterTab(tabName)
+    deactivateTab()
   }
 
   const deactivateTab = () => {

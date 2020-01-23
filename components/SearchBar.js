@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Header, Item, Icon, Input, Button, Text } from 'native-base'
+import { Item, Icon, Input, Button } from 'native-base'
 
 const SearchBar = () => {
   return (

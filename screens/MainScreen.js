@@ -1,17 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Container, Tabs, Tab } from 'native-base'
 import SearchBar from '../components/SearchBar'
 import FooterNavigation from '../components/FooterNavigation'
-import TimelineScreen from '../screens/TimelineScreen'
 import ActivityScreen from '../screens/ActivityScreen'
+import TimelineScreen from '../screens/TimelineScreen'
+import StatsScreen from '../screens/StatsScreen'
+import AlertsScreen from '../screens/AlertsScreen'
+import MessagesScreen from '../screens/MessagesScreen'
+import MenuScreen from '../screens/MenuScreen'
 
 const MainScreen = props => {
-  let content = <TimelineScreen
-    navigateActivity={props.navigation.navigate} />
+  const [screenTab, setScreenTab] = useState()
+
+  const homeTab = <TimelineScreen
+  navigateActivity={props.navigation.navigate} />
+
+  let content = homeTab
+
+  if (screenTab === 'home') {
+    content = homeTab
+  } else if (screenTab === 'stats') {
+    content = <StatsScreen />
+  } else if (screenTab === 'alerts') {
+    content = <AlertsScreen />
+  } else if (screenTab === 'messages') {
+    content = <MessagesScreen />
+  } else if (screenTab === 'menu') {
+    content = <MenuScreen />
+  }
 
   const getFooterTab = tabName => {
-    console.log(11, tabName)
+    setScreenTab(tabName)
   }
 
   return (

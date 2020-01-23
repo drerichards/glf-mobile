@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 
-const MessagesScreen = () => {
+const MenuScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>MessagesScreen</Text>
+      <Text>MenuScreen</Text>
     </View>
   )
 }
@@ -15,4 +15,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MessagesScreen
+export default MenuScreen

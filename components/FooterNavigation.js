@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Footer, FooterTab, Button, Icon } from 'native-base'
 
-const FooterNavigation = ({getFooterTab}) => {
+const FooterNavigation = ({ getFooterTab }) => {
   const [currentActiveTab, setCurrentActiveTab] = useState('home')
   const [activeHomeTab, setActiveHomeTab] = useState(true)
   const [activeStatsTab, setActiveStatsTab] = useState(false)
+  const [activeAlertsTab, setActiveAlertsTab] = useState(false)
   const [activeMessagesTab, setActiveMessagesTab] = useState(false)
-  const [activeUsersTab, setActiveUsersTab] = useState(false)
   const [activeMenuTab, setActiveMenuTab] = useState(false)
 
   const onTabPress = tabName => {
@@ -25,12 +25,12 @@ const FooterNavigation = ({getFooterTab}) => {
         setActiveStatsTab(true)
         tabFunctions(tabName)
         break
-      case 'messages':
-        setActiveMessagesTab(true)
+      case 'alerts':
+        setActiveAlertsTab(true)
         tabFunctions(tabName)
         break
-      case 'users':
-        setActiveUsersTab(true)
+      case 'messages':
+        setActiveMessagesTab(true)
         tabFunctions(tabName)
         break
       case 'menu':
@@ -55,11 +55,11 @@ const FooterNavigation = ({getFooterTab}) => {
       case 'stats':
         setActiveStatsTab(false)
         break
+      case 'alerts':
+        setActiveAlertsTab(false)
+        break
       case 'messages':
         setActiveMessagesTab(false)
-        break
-      case 'users':
-        setActiveUsersTab(false)
         break
       case 'menu':
         setActiveMenuTab(false)
@@ -79,10 +79,10 @@ const FooterNavigation = ({getFooterTab}) => {
           <Button active={activeStatsTab} onPress={onTabPress.bind(this, 'stats')}>
             <Icon name="grid" />
           </Button>
-          <Button active={activeMessagesTab} onPress={onTabPress.bind(this, 'messages')}>
-            <Icon name="text" />
+          <Button active={activeAlertsTab} onPress={onTabPress.bind(this, 'alerts')}>
+            <Icon name="flash" />
           </Button>
-          <Button active={activeUsersTab} onPress={onTabPress.bind(this, 'users')}>
+          <Button active={activeMessagesTab} onPress={onTabPress.bind(this, 'messages')}>
             <Icon name="people" />
           </Button>
           <Button active={activeMenuTab} onPress={onTabPress.bind(this, 'menu')}>

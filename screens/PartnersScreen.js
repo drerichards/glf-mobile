@@ -50,7 +50,7 @@ const PartnersScreen = props => {
       </View>
       <View style={[styles.container, styles.contentContainer]}>
         <Button style={[styles.button, styles.next]} onPress={() =>
-          props.navigation.navigate('Timeline')}>
+          props.navigation.navigate('Main')}>
           <Text style={styles.buttonText}>Discover Opportunities</Text>
         </Button>
       </View>

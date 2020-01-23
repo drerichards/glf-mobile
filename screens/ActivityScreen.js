@@ -7,7 +7,6 @@ import FooterNavigation from '../components/FooterNavigation'
 const ActivityScreen = () => {
   return (
     <View style={styles.container}>
-      <SearchBar />
       <View style={styles.headerContainer}>
 
       </View>

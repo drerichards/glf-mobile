@@ -1,18 +1,15 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Container, Tabs, Tab } from 'native-base'
-import SearchBar from '../components/SearchBar'
 import RecommendedTab from '../components/tabPages/RecommendedTab'
 import TabPage from '../components/tabPages/TabPage'
-import FooterNavigation from '../components/FooterNavigation'
 
-const TimelineScreen = props => {
+const TimelineScreen = ({ navigateActivity }) => {
   return (
     <Container>
-      <SearchBar />
       <Tabs>
         <Tab heading="Recommended">
-          <RecommendedTab navigateActivity={props.navigation.navigate} />
+          <RecommendedTab navigateActivity={navigateActivity} />
         </Tab>
         <Tab heading="Trending">
           <TabPage title={'Trending'} />
@@ -21,7 +18,6 @@ const TimelineScreen = props => {
           <TabPage title={'Latest'} />
         </Tab>
       </Tabs>
-      <FooterNavigation />
     </Container>
   )
 }

@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   activityListContainer: {
+    flex: 1,
     flexDirection: 'column'
   },
   cardContainer: {

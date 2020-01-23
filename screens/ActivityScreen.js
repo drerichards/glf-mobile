@@ -1,10 +1,13 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import { Container, Tabs, Tab } from 'native-base'
 import SearchBar from '../components/SearchBar'
 import FooterNavigation from '../components/FooterNavigation'
 
-const ActivityScreen = () => {
+const ActivityScreen = props => {
+  const data = props.navigation.state.params
+  const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -14,7 +17,9 @@ const ActivityScreen = () => {
 
       </View>
       <View style={styles.bodyContainer}>
-
+        <Text>Sample {data.value}</Text>
+        <Text>{lorem}</Text>
+        <Text>{lorem}</Text>
       </View>
       <FooterNavigation />
     </View>
@@ -40,6 +45,9 @@ const styles = StyleSheet.create({
     elevation: .1,
     marginBottom: 5
   },
+  bodyContainer: {
+    textAlign: 'left'
+  }
 })
 
 export default ActivityScreen

@@ -1,19 +1,20 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Text } from 'native-base'
-import RecommendedList from './RecommendedList';
+import ImageHeader from '../../ImageHeader'
+import RecommendedList from './RecommendedList'
 
 const RecommendedTab = ({ renderActivityScreen, activities }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}>
+      <ImageHeader>
         <Text style={styles.headerText}>Service Activity</Text>
         <Text style={styles.headerCaption}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</Text>
-      </View>
+      </ImageHeader>
       <View style={styles.activityListContainer}>
         <RecommendedList
-        renderActivityScreen={renderActivityScreen}
-        activities={activities} 
+          renderActivityScreen={renderActivityScreen}
+          activities={activities}
         />
       </View>
     </View>
@@ -25,20 +26,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  headerContainer: {
-    flexDirection: 'row',
-    backgroundColor: '#333',
-    padding: 20,
-    shadowColor: '#ddd',
-    shadowOffset: {
-      width: 0,
-      height: 1
-    },
-    shadowOpacity: 0.8,
-    shadowRadius: .1,
-    elevation: .1,
-    marginBottom: 5
-  },
   headerText: {
     flex: 1,
     fontSize: 18,
@@ -47,6 +34,8 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   headerCaption: {
+    alignItems: 'center',
+    
     flex: 1,
     fontSize: 12,
     fontWeight: '600',

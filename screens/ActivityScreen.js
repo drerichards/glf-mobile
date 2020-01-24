@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Button, Text, Icon } from 'native-base'
+import ImageHeader from '../components/ImageHeader';
 
 const ActivityScreen = props => {
   const data = props.navigation.state.params
@@ -8,7 +9,7 @@ const ActivityScreen = props => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}></View>
+      <ImageHeader />
       <Button
         transparent
         style={styles.logoButton}

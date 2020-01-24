@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     padding: 30,
     width: '100%',
     height: 148,
-    backgroundColor: Color.grey,
+    backgroundColor: Color.darkGrey,
     shadowColor: '#ddd',
     shadowOffset: {
       width: 0,

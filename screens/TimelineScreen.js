@@ -26,7 +26,7 @@ const TimelineScreen = ({ navigateActivity }) => {
     iterateObj()
   }, [newArr])
 
-  const renderActivityScreen = cardData => {
+  const renderNextScreen = cardData => {
     navigateActivity('Activity', cardData)
   }
   
@@ -35,7 +35,7 @@ const TimelineScreen = ({ navigateActivity }) => {
         <Tabs>
           <Tab heading="Recommended">
             <RecommendedTab
-              renderActivityScreen={renderActivityScreen}
+              renderNextScreen={renderNextScreen}
               activities={newArr} />
           </Tab>
           <Tab heading="Trending">

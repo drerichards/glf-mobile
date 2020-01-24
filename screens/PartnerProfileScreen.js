@@ -3,11 +3,11 @@ import { StyleSheet, View } from 'react-native'
 import { Button, Text, Icon, Card } from 'native-base'
 import ImageHeader from '../components/ImageHeader'
 import ActivityList from '../components/Activities/ActivityList'
+import IconList from '../components/IconList'
 import Color from '../constants/ColorScheme'
 
 const newArr = []
 const activity = {
-  organization: 'NAF',
   value: 'Service Activity',
   info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
   date: 'Tuesday October 29, 2019',
@@ -50,16 +50,15 @@ const PartnerProfileScreen = () => {
         </View>
       </Card>
       <Card style={styles.activityListContainer}>
-        <Text style={styles.activityTitle}>What's Happening</Text>
-        <ActivityList
-          activities={newArr}
-        />
+        <Text style={styles.title}>What's Happening</Text>
+        <ActivityList activities={newArr} />
       </Card>
       <Card style={styles.communityContainer}>
-        <Text>Community</Text>
+        <Text style={[styles.title, { paddingLeft: 10 }]}>Community</Text>
+        <IconList count={10} style={{ paddingLeft: 10 }} />
       </Card>
       <Card style={styles.updatesContainer}>
-        <Text>Updates</Text>
+        <Text style={styles.title}>Updates</Text>
       </Card>
     </View>
   )
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
     height: 124,
     width: 156,
-    borderColor: Color.grey,
+    borderColor: Color.darkGrey,
     borderWidth: 1,
     borderRadius: 3,
     backgroundColor: '#fff',
@@ -122,15 +121,19 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 10
   },
-  activityTitle: {
-    color: Color.grey,
+  title: {
+    color: Color.darkGrey,
     fontSize: 14,
     fontWeight: '600'
   },
   communityContainer: {
+    justifyContent: 'center',
+    paddingTop: 10
 
   },
   updatesContainer: {
+    justifyContent: 'center',
+    padding: 10
 
   }
 })

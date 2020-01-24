@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Button, Text, Icon } from 'native-base'
+import { Button, Text } from 'native-base'
 import ImageHeader from '../components/ImageHeader'
+import IconList from '../components/IconList'
 import Color from '../constants/ColorScheme'
 
 const ActivityScreen = props => {
@@ -22,12 +23,7 @@ const ActivityScreen = props => {
         <Text style={styles.bodyText}>{lorem}</Text>
         <Text style={styles.bodyText}>{lorem}</Text>
       </View>
-      <View style={styles.iconContainer}>
-        <Icon style={styles.userIcon} type="FontAwesome" name="user-circle" />
-        <Icon style={styles.userIcon} type="FontAwesome" name="user-circle" />
-        <Icon style={styles.userIcon} type="FontAwesome" name="user-circle" />
-        <Icon style={styles.userIcon} type="FontAwesome" name="user-circle" />
-      </View>
+      <IconList count={4} />
       <View>
         <Text style={styles.dateText}>{data.date}</Text>
         <Button style={[styles.button, styles.rsvp]}>
@@ -50,7 +46,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
     height: 148,
-    backgroundColor: Color.grey,
+    backgroundColor: Color.darkGrey,
     shadowColor: '#ddd',
     shadowOffset: {
       width: 0,
@@ -61,24 +57,12 @@ const styles = StyleSheet.create({
     elevation: .1,
     marginBottom: 5
   },
-  iconContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    textAlign: 'left',
-    width: '100%',
-    paddingHorizontal: 30,
-    paddingBottom: 30
-  },
-  userIcon: {
-    marginRight: 10
-  },
   logoButton: {
     position: 'absolute',
     zIndex: 3,
     height: 124,
     width: 156,
-    borderColor: Color.grey,
+    borderColor: Color.darkGrey,
     borderWidth: 1,
     borderRadius: 3,
     backgroundColor: '#fff',
@@ -101,8 +85,9 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   dateText: {
+    marginTop: 10,
     textAlign: 'center',
-    color: Color.grey,
+    color: Color.lightGrey,
     fontWeight: '600'
   },
   button: {

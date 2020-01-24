@@ -4,7 +4,7 @@ import { Text } from 'native-base'
 import ImageHeader from '../../ImageHeader'
 import ActivityList from '../../Activities/ActivityList'
 
-const RecommendedTab = ({ renderActivityScreen, activities }) => {
+const RecommendedTab = ({ renderNextScreen, activities }) => {
   return (
     <View style={styles.container}>
       <ImageHeader>
@@ -13,7 +13,7 @@ const RecommendedTab = ({ renderActivityScreen, activities }) => {
       </ImageHeader>
       <View style={styles.activityListContainer}>
         <ActivityList
-          renderActivityScreen={renderActivityScreen}
+          renderNextScreen={renderNextScreen}
           activities={activities}
           numColumns={2}
           horizontal={false}

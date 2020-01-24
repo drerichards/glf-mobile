@@ -3,25 +3,27 @@ import { StyleSheet, View } from 'react-native'
 import { Card, CardItem, Text, Button } from 'native-base'
 import Color from '../../constants/ColorScheme'
 
-const ActivityCard = ({ item, renderActivityScreen }) => {
+const ActivityCard = ({ item, renderNextScreen }) => {
   return (
     <Card style={styles.cardContainer}>
       <CardItem
         button
-        onPress={() => renderActivityScreen(item)}
+        onPress={() => renderNextScreen(item)}
         style={styles.cardHeaderContainer}>
-        <Text style={styles.organization}>{item.organization}</Text>
+        {item.organization
+          ? <Text style={styles.organization}>{item.organization}</Text>
+          : null}
         <Text style={styles.value}>{item.value}</Text>
       </CardItem>
       <CardItem
         cardBody
         button
-        onPress={() => renderActivityScreen(item)} style={styles.cardImageContainer}>
+        onPress={() => renderNextScreen(item)} style={styles.cardImageContainer}>
         <View></View>
       </CardItem>
       <CardItem
         button
-        onPress={() => renderActivityScreen(item)}
+        onPress={() => renderNextScreen(item)}
         style={styles.cardFooterContainer}>
         <Text style={styles.date}>{item.date}</Text>
         <Text style={styles.info}>{item.info}</Text>
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
   },
   organization: {
     fontSize: 10,
-    color: Color.grey,
+    color: Color.darkGrey,
     fontWeight: '600'
   },
   value: {
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   cardImageContainer: {
-    backgroundColor: Color.grey,
+    backgroundColor: Color.darkGrey,
     height: 90
   },
   cardFooterContainer: {
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
   },
   date: {
     fontSize: 10,
-    color: Color.grey,
+    color: Color.lightGrey,
     marginBottom: 5,
     fontWeight: '600',
   },

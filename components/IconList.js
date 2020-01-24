@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   userIcon: {
     marginVertical: 10,
     marginRight: 10
-  },
+  }
 })
 
 export default IconList

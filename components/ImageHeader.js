@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
+import Color from '../constants/ColorScheme';
 
 const ImageHeader = props => {
   return (
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     padding: 30,
     width: '100%',
     height: 148,
-    backgroundColor: '#333',
+    backgroundColor: Color.grey,
     shadowColor: '#ddd',
     shadowOffset: {
       width: 0,

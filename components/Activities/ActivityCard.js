@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   organization: {
     fontSize: 10,
-    color: '#666',
+    color: Color.grey,
     fontWeight: '600'
   },
   value: {
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   cardImageContainer: {
-    backgroundColor: '#333',
+    backgroundColor: Color.grey,
     height: 90
   },
   cardFooterContainer: {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   date: {
     fontSize: 10,
-    color: '#666',
+    color: Color.grey,
     marginBottom: 5,
     fontWeight: '600',
   },

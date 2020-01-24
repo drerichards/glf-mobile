@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
     height: 148,
-    backgroundColor: '#333',
+    backgroundColor: Color.grey,
     shadowColor: '#ddd',
     shadowOffset: {
       width: 0,
@@ -73,15 +73,12 @@ const styles = StyleSheet.create({
   userIcon: {
     marginRight: 10
   },
-  logoContainer: {
-
-  },
   logoButton: {
     position: 'absolute',
     zIndex: 3,
     height: 124,
     width: 156,
-    borderColor: 'gray',
+    borderColor: Color.grey,
     borderWidth: 1,
     borderRadius: 3,
     backgroundColor: '#fff',
@@ -105,7 +102,7 @@ const styles = StyleSheet.create({
   },
   dateText: {
     textAlign: 'center',
-    color: 'gray',
+    color: Color.grey,
     fontWeight: '600'
   },
   button: {

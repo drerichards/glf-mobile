@@ -34,14 +34,14 @@ const PartnerProfileScreen = () => {
       </View>
       <Card style={styles.headerContainer}>
         <View style={styles.orgTitleContainer}>
-          <Text>NAF</Text>
-          <Text>naf.org</Text>
+          <Text style={styles.orgTitle}>NAF</Text>
+          <Text style={styles.orgCaption}>naf.org</Text>
         </View>
         <View style={styles.buttonContainer}>
           <Button small style={styles.button}>
             <Text style={styles.buttonText}>Volunteer</Text>
           </Button>
-          <Button small style={styles.button}>
+          <Button small style={[styles.button, { backgroundColor: Color.blue }]}>
             <Text style={styles.buttonText}>Donate</Text>
           </Button>
           <Button small style={styles.button}>
@@ -50,7 +50,7 @@ const PartnerProfileScreen = () => {
         </View>
       </Card>
       <Card style={styles.activityListContainer}>
-        <Text>What's Happening</Text>
+        <Text style={styles.activityTitle}>What's Happening</Text>
         <ActivityList
           activities={newArr}
         />
@@ -75,13 +75,35 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     padding: 10
-
   },
   logoContainer: {
-
+    position: 'absolute',
+    zIndex: 3,
+    height: 124,
+    width: 156,
+    borderColor: Color.grey,
+    borderWidth: 1,
+    borderRadius: 3,
+    backgroundColor: '#fff',
+    top: '12%',
+    right: '31.25%',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   orgTitleContainer: {
-
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 65,
+    paddingBottom: 10
+  },
+  orgTitle: {
+    color: Color.blue,
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  orgCaption: {
+    color: Color.orange,
+    fontSize: 14
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -99,6 +121,11 @@ const styles = StyleSheet.create({
   activityListContainer: {
     flexDirection: 'column',
     padding: 10
+  },
+  activityTitle: {
+    color: Color.grey,
+    fontSize: 14,
+    fontWeight: '600'
   },
   communityContainer: {
 

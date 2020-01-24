@@ -16,7 +16,8 @@ const activity = {
 
 const iterateObj = () => {
   for (let i = 0; i < 6; i++) {
-    newArr.push({ ...activity, id: i.toString() })
+    let id = Math.random()
+    newArr.push({ ...activity, id: id.toString() })
   }
 }
 

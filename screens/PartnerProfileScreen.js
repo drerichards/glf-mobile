@@ -16,7 +16,8 @@ const activity = {
 
 const iterateObj = () => {
   for (let i = 0; i < 6; i++) {
-    newArr.push({ ...activity, id: i.toString() })
+    let id = Math.random()
+    newArr.push({ ...activity, id: id.toString() })
   }
 }
 
@@ -28,12 +29,30 @@ const PartnerProfileScreen = () => {
   return (
     <View style={styles.container}>
       <ImageHeader />
+      <View style={styles.logoContainer}>
+      </View>
+      <View style={styles.orgTitleContainer}>
+        <Text>NAF</Text>
+        <Text>naf.org</Text>
+      </View>
+      <View style={styles.buttonContainer}></View>
+      <Button>
+        <Text>Volunteer</Text>
+      </Button>
+      <Button>
+        <Text>Donate</Text>
+      </Button>
+      <Button>
+        <Text>Join</Text>
+      </Button>
       <View style={styles.activityListContainer}>
         <Text>What's Happening</Text>
         <ActivityList
           activities={newArr}
         />
       </View>
+      <View style={styles.communityContainer}></View>
+      <View style={styles.updatesContainer}></View>
     </View>
   )
 }
@@ -45,12 +64,26 @@ PartnerProfileScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    padding: 20
+  },
+  logoContainer: {
+
+  },
+  orgTitleContainer: {
+
+  },
+  buttonContainer: {
+
   },
   activityListContainer: {
-    // flex: 1,
     flexDirection: 'column',
-    height: 270
+    maxHeight: 250
+  },
+  communityContainer: {
+
+  },
+  updatesContainer: {
+
   }
 })
 

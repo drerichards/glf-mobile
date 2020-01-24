@@ -9,7 +9,7 @@ const ActivityList = ({ renderActivityScreen, activities, numColumns }) => {
         numColumns
           ? <FlatList
             data={activities}
-            keyExtractor={(item, i) => item.id}
+            keyExtractor={(item, i) => item.id.toString()}
             numColumns={numColumns}
             renderItem={
               ({ item }) =>
@@ -20,7 +20,7 @@ const ActivityList = ({ renderActivityScreen, activities, numColumns }) => {
             } />
           : <FlatList
             data={activities}
-            keyExtractor={(item, i) => i}
+            keyExtractor={(item, i) => item.id.toString()}
             horizontal
             renderItem={
               ({ item }) =>

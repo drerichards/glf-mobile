@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, FlatList } from 'react-native'
 import { Text, Button, ListItem, CheckBox } from 'native-base'
+import Color from '../constants/ColorScheme'
 
 const PartnersScreen = props => {
   const organizations = [{
@@ -31,7 +32,7 @@ const PartnersScreen = props => {
             <ListItem style={styles.listItem}>
               <View>
                 <View style={styles.listCheckContainer}>
-                  <CheckBox color='#105985' checked={true} />
+                  <CheckBox color={Color.blue} checked={true} />
                   <Text style={styles.listCheckText}>{orgData.item.value}</Text>
                 </View>
                 <View>
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   headerText: {
-    color: '#105985',
+    color: Color.blue,
     fontWeight: '600',
     fontSize: 35
   },
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   listLabel: {
-    backgroundColor: '#105985',
+    backgroundColor: Color.blue,
     marginRight: 5,
     height: 24,
     padding: 5
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
   },
   next: {
     marginTop: 20,
-    backgroundColor: '#EE5525'
+    backgroundColor: Color.orange
   },
 })
 

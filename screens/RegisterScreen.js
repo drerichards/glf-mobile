@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Icon, Text, Button, Form, Item, Label, Input } from 'native-base'
+import Color from '../constants/ColorScheme'
 
 const RegisterScreen = props => {
   return (
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     height: 120
   },
   icon: {
-    color: '#105985',
+    color: Color.blue,
     fontSize: 100
   },
   transparentBtnText: {
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   },
   explore: {
     marginTop: 20,
-    backgroundColor: '#EE5525'
+    backgroundColor: Color.orange
   },
 })
 

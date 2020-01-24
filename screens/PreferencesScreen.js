@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, FlatList } from 'react-native'
 import { Text, Button, ListItem, CheckBox } from 'native-base'
+import Color from '../constants/ColorScheme'
 
 const PreferencesScreen = props => {
   const prefs = [{
@@ -33,7 +34,7 @@ const PreferencesScreen = props => {
           keyExtractor={(item, i) => item.value}
           renderItem={prefData =>
             <ListItem style={styles.listItem}>
-              <CheckBox color='#105985' checked={true} />
+              <CheckBox color={Color.blue} checked={true} />
               <Text style={{ marginLeft: 10 }}>{prefData.item.value}</Text>
             </ListItem>
           }
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerText: {
-    color: '#105985',
+    color: Color.blue,
     fontWeight: '600',
     fontSize: 35
   },
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
   },
   next: {
     marginTop: 20,
-    backgroundColor: '#EE5525'
+    backgroundColor: Color.orange
   },
 })
 

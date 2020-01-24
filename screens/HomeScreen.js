@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Text, Button } from 'native-base'
+import Color from '../constants/ColorScheme'
 
 const HomeScreen = props => {
   return (
@@ -56,10 +57,10 @@ const styles = StyleSheet.create({
     height: 72
   },
   login: {
-    backgroundColor: '#105985'
+    backgroundColor: Color.blue
   },
   register: {
-    backgroundColor: '#EE5525'
+    backgroundColor: Color.orange
   },
   buttonText: {
     fontWeight: '800'
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     fontSize: 18,
     textAlign: 'center',
-    color: '#105985'
+    color: Color.blue
   }
 })
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Button, Text, Icon } from 'native-base'
-import ImageHeader from '../components/ImageHeader';
+import ImageHeader from '../components/ImageHeader'
+import Color from '../constants/ColorScheme'
 
 const ActivityScreen = props => {
   const data = props.navigation.state.params
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   },
   bodyTitle: {
-    color: '#105985',
+    color: Color.blue,
     fontWeight: '600',
     fontSize: 20,
     width: 200
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
   },
   rsvp: {
     marginTop: 5,
-    backgroundColor: '#EE5525'
+    backgroundColor: Color.orange
   },
 })
 

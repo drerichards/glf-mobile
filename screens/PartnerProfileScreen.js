@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Button, Text, Icon } from 'native-base'
+import { Button, Text, Icon, Card } from 'native-base'
 import ImageHeader from '../components/ImageHeader'
 import ActivityList from '../components/Activities/ActivityList'
-
+import Color from '../constants/ColorScheme'
 
 const newArr = []
 const activity = {
@@ -30,29 +30,37 @@ const PartnerProfileScreen = () => {
     <View style={styles.container}>
       <ImageHeader />
       <View style={styles.logoContainer}>
+        <Text>NAF Logo</Text>
       </View>
-      <View style={styles.orgTitleContainer}>
-        <Text>NAF</Text>
-        <Text>naf.org</Text>
-      </View>
-      <View style={styles.buttonContainer}></View>
-      <Button>
-        <Text>Volunteer</Text>
-      </Button>
-      <Button>
-        <Text>Donate</Text>
-      </Button>
-      <Button>
-        <Text>Join</Text>
-      </Button>
-      <View style={styles.activityListContainer}>
+      <Card style={styles.headerContainer}>
+        <View style={styles.orgTitleContainer}>
+          <Text>NAF</Text>
+          <Text>naf.org</Text>
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button small style={styles.button}>
+            <Text style={styles.buttonText}>Volunteer</Text>
+          </Button>
+          <Button small style={styles.button}>
+            <Text style={styles.buttonText}>Donate</Text>
+          </Button>
+          <Button small style={styles.button}>
+            <Text style={styles.buttonText}>Join</Text>
+          </Button>
+        </View>
+      </Card>
+      <Card style={styles.activityListContainer}>
         <Text>What's Happening</Text>
         <ActivityList
           activities={newArr}
         />
-      </View>
-      <View style={styles.communityContainer}></View>
-      <View style={styles.updatesContainer}></View>
+      </Card>
+      <Card style={styles.communityContainer}>
+        <Text>Community</Text>
+      </Card>
+      <Card style={styles.updatesContainer}>
+        <Text>Updates</Text>
+      </Card>
     </View>
   )
 }
@@ -64,7 +72,10 @@ PartnerProfileScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20
+  },
+  headerContainer: {
+    padding: 10
+
   },
   logoContainer: {
 
@@ -73,11 +84,21 @@ const styles = StyleSheet.create({
 
   },
   buttonContainer: {
-
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  button: {
+    width: 118,
+    justifyContent: 'center',
+    backgroundColor: Color.orange
+  },
+  buttonText: {
+    fontWeight: 'bold'
   },
   activityListContainer: {
     flexDirection: 'column',
-    maxHeight: 250
+    padding: 10
   },
   communityContainer: {
 

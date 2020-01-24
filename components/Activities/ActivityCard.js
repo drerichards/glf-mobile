@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Card, CardItem, Text, Button } from 'native-base'
+import Color from '../../constants/ColorScheme'
 
 const ActivityCard = ({ item, renderActivityScreen }) => {
   return (
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
   },
   value: {
     fontWeight: '600',
-    color: '#105985',
+    color: Color.blue,
     fontSize: 12
   },
   cardImageContainer: {
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   listLabel: {
-    backgroundColor: '#EE5525',
+    backgroundColor: Color.orange,
     marginRight: 5,
     width: 55,
     height: 20,

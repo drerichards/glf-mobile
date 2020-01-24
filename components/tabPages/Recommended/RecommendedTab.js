@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Text } from 'native-base'
 import ImageHeader from '../../ImageHeader'
-import RecommendedList from './RecommendedList'
+import ActivityList from '../../Activities/ActivityList'
 
 const RecommendedTab = ({ renderActivityScreen, activities }) => {
   return (
@@ -12,9 +12,11 @@ const RecommendedTab = ({ renderActivityScreen, activities }) => {
         <Text style={styles.headerCaption}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</Text>
       </ImageHeader>
       <View style={styles.activityListContainer}>
-        <RecommendedList
+        <ActivityList
           renderActivityScreen={renderActivityScreen}
           activities={activities}
+          numColumns={2}
+          horizontal={false}
         />
       </View>
     </View>
@@ -35,7 +37,6 @@ const styles = StyleSheet.create({
   },
   headerCaption: {
     alignItems: 'center',
-    
     flex: 1,
     fontSize: 12,
     fontWeight: '600',

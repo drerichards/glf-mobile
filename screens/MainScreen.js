@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Container, Tabs, Tab } from 'native-base'
 import SearchBar from '../components/SearchBar'
 import FooterNavigation from '../components/FooterNavigation'
 import TimelineScreen from '../screens/TimelineScreen'

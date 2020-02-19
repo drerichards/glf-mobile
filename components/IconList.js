@@ -20,7 +20,7 @@ const IconList = props => {
   }, [newArr])
 
   return (
-    <View style={{...styles.iconContainer, ...props.style}}>
+    <View style={{ ...styles.iconContainer, ...props.style }}>
       <FlatList
         data={newArr}
         horizontal
